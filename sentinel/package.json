@@ -21,9 +21,9 @@
     "typescript": "^5.7.2"
   },
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/sentinel.js",
+    "build": "node init && tsc",
+    "start": "node init && node dist/sentinel.js",
     "postinstall": "patch-package",
-    "dev": "npx tsx src/sentinel.ts --config ./example_config.json"
+    "dev": "node init && npx tsx src/sentinel.ts --config ./example_config.json"
   }
 }

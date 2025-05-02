@@ -3,12 +3,15 @@
   "version": "1.0.1",
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/sentinel.js",
+    "build": "node init && tsc",
+    "start": "node init && node dist/sentinel.js",
     "test": "vitest run",
     "test-watch": "vitest"
   },
-  "files": ["./src", "./dist"],
+  "files": [
+    "./src",
+    "./dist"
+  ],
   "keywords": [],
   "author": "",
   "license": "MIT",

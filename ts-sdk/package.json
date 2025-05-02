@@ -10,7 +10,13 @@
     "url": "https://github.com/unionlabs/union.git",
     "directory": "ts-sdk"
   },
-  "files": ["LICENSE", "README.md", "dist", "package.json", "src"],
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist",
+    "package.json",
+    "src"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -50,9 +56,9 @@
     }
   },
   "scripts": {
-    "build": "pnpm build-esm && pnpm build-annotate",
-    "build-annotate": "babel dist/ --plugins annotate-pure-calls --out-dir dist/ --source-maps",
-    "build-esm": "tsc -b tsconfig.build.json",
+    "build": "node init && pnpm build-esm && pnpm build-annotate",
+    "build-annotate": "node init && babel dist/ --plugins annotate-pure-calls --out-dir dist/ --source-maps",
+    "build-esm": "node init && tsc -b tsconfig.build.json",
     "check": "tsc -b tsconfig.json",
     "check:examples": "tsc -p tsconfig.examples.json",
     "check:circular": "dpdm -T src",
